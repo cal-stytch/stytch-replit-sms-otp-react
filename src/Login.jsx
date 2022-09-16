@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { StytchLogin, useStytchUser, useStytchSession } from "@stytch/react";
+import {Products, OTPMethods} from "@stytch/vanilla-js"
 import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
@@ -8,9 +9,9 @@ const Login = () => {
   const {session} = useStytchSession()
   const stytchProps = {
     loginOrSignupView: {
-      products: ['otp'],
+      products: [Products.otp],
       otpOptions: {
-        methods: ['sms'],
+        methods: [OTPMethods.SMS],
         expirationMinutes: 10,
       },
     },
